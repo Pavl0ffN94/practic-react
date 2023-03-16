@@ -1,18 +1,14 @@
 import './CostItem.css';
+import {CostDate} from './CostDate';
 
-function CostItem() {
-  const costDate = new Date(2023, 2, 15);
-  const costDescription = 'Холодильник';
-  const costAmount = 999.99;
-
+export function CostItem(props) {
   return (
     <div className="cost-item">
-      <div>{costDate.toISOString()}</div>
+      <CostDate date={props.date} />
       <div className="cost-item__description">
-        <h2> {costDescription} </h2>
-        <div className="cost-item__price"> {costAmount} </div>
+        <h2> {props.description} </h2>
+        <div className="cost-item__price">${props.amount} </div>
       </div>
     </div>
   );
 }
-export default CostItem;
