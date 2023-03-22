@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './CostForm.css';
 
-export const CostForm = () => {
+export const CostForm = () => //{
 //   const [name, setName] = useState('');
 //   const [amount, setAmount] = useState('');
 //   const [date, setDate] = useState('');
