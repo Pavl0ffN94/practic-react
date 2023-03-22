@@ -1,6 +1,7 @@
-import {Costs} from './components/Costs';
+import {Costs} from './components/Costs/Costs';
+import {NewCost} from './components/NewCost/NewCost';
 
-function App() {
+const App = () => {
   const costs = [
     {
       date: new Date(2023, 2, 15),
@@ -21,10 +22,10 @@ function App() {
 
   return (
     <div>
-      <h1>Начнем изучения React</h1>
+      <NewCost />
       <Costs costs={costs} />
     </div>
   );
-}
+};
 
 export default App;
