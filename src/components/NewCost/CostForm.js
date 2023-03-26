@@ -4,7 +4,7 @@ import './CostForm.css';
 export const CostForm = props => {
   const [inputName, setInputName] = useState('');
   const [inputAmount, setInputAmount] = useState('');
-  const [inputData, setInputData] = useState('');
+  const [inputDate, setInputDate] = useState('');
 
   const nameChangeHandler = e => {
     setInputName(e.target.value);
@@ -14,24 +14,24 @@ export const CostForm = props => {
     setInputAmount(e.target.value);
   };
 
-  const dataChangeHandler = e => {
-    setInputData(e.target.value);
+  const dateChangeHandler = e => {
+    setInputDate(e.target.value);
   };
 
   const submitHandler = e => {
     e.preventDefault();
 
     const costData = {
-      name: inputName,
+      description: inputName,
       amount: inputAmount,
-      data: new Date(inputData),
+      date: new Date(inputDate),
     };
 
-    props.onSaveCostData(costData);
+    props.onSaveCostDate(costData);
 
     setInputName('');
     setInputAmount('');
-    setInputData('');
+    setInputDate('');
   };
 
   return (
@@ -54,8 +54,8 @@ export const CostForm = props => {
         <div className="new-cost__control">
           <label>Дата</label>
           <input
-            onChange={dataChangeHandler}
-            value={inputData}
+            onChange={dateChangeHandler}
+            value={inputDate}
             type="date"
             min="2019-01-01"
             step="2023-12-31"
@@ -63,6 +63,9 @@ export const CostForm = props => {
         </div>
         <div className="new-cost__actions">
           <button type="submit">Добавить расход</button>
+          <button type="button" onClick={props.onCancel}>
+            Отмена
+          </button>
         </div>
       </div>
     </form>
