@@ -6,12 +6,12 @@ export const NewCost = props => {
   const [isFormVisible, setisFormVisible] = useState(false);
 
   const saveCostDateHandler = inputCostDate => {
-    const costData = {
+    const costDate = {
       ...inputCostDate,
       id: Math.random().toString(),
     };
-    props.onAddCost(costData);
-    saveCostDateHandler(false);
+    props.onAddCost(costDate);
+    setisFormVisible(false);
   };
 
   const inputCostDateHandler = () => {

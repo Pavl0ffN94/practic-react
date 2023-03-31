@@ -21,13 +21,13 @@ export const CostForm = props => {
   const submitHandler = e => {
     e.preventDefault();
 
-    const costData = {
+    const costDate = {
       description: inputName,
       amount: inputAmount,
       date: new Date(inputDate),
     };
 
-    props.onSaveCostDate(costData);
+    props.onSaveCostDate(costDate);
 
     setInputName('');
     setInputAmount('');
