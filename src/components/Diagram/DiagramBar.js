@@ -1,4 +1,4 @@
-import './DiagrapmBar.css';
+import './DiagramBar.css';
 
 export const DiagramBar = props => {
   let barFillHeight = '0%';
@@ -9,12 +9,8 @@ export const DiagramBar = props => {
 
   return (
     <div className="diagram-bar">
-      <div className="diagram-bar__inner ">
-        <div
-          className="diagram-bar__fill"
-          style={{
-            height: barFillHeight,
-          }}></div>
+      <div className="diagram-bar__inner">
+        <div className="diagram-bar__fill" style={{height: barFillHeight}}></div>
       </div>
       <div className="diagram-bar__label"> {props.label} </div>
     </div>
